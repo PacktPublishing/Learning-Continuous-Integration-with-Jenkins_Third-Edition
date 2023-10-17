@@ -1,0 +1,27 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "nyc --reporter=lcov --report-dir=../test-output/coverage mocha --reporter mocha-junit-reporter --reporter-options mochaFile=../test-output/unit-test-report/junit-test-results.xml ../unit-tests/*.test.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongodb": "^3.6.6"
+    },
+    "devDependencies": {
+        "mocha": "^10.2.0",
+        "mocha-junit-reporter": "^2.2.1",
+        "chai": "^4.3.7",
+        "chai-http": "^4.4.0",
+        "nyc": "^15.1.0",
+        "sinon": "^15.2.0"
+    },
+    "nyc": {
+        "reporter": ["lcov", "text-summary"]
+    },
+    "author": "Nikhil Pathania",
+    "license": "MIT"
+}

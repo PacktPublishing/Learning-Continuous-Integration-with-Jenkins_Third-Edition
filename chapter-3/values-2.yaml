@@ -1,0 +1,16 @@
+controller:
+  jenkinsUrl: https://<public IP>/
+  existingSecret: mysecret
+  JCasC:
+    configScripts:
+      jenkinsCredentials: |
+        credentials:
+          system:
+            domainCredentials:
+            - credentials:
+              - usernamePassword:
+                  description: "username and password"
+                  id: "username_pass"
+                  password: ${password_key}
+                  scope: GLOBAL
+                  username: ${username_key}

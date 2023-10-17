@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb
+  labels:
+    app: mongodb
+spec:
+  serviceName: mongodb
+  replicas: {{ .Values.mongodb.replicaCount }}
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: "{{ .Values.mongodb.image.repository }}:{{ .Values.mongodb.image.tag }}"
+        imagePullPolicy: {{ .Values.mongodb.image.pullPolicy }}
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: mongodb-data
+          mountPath: /data/db
+        - name: mongodb-init-scripts
+          mountPath: /docker-entrypoint-initdb.d/
+        resources:
+          {{- toYaml .Values.mongodb.resources | nindent 12 }}
+      nodeSelector:
+        {{- toYaml .Values.mongodb.nodeSelector | nindent 8 }}
+      tolerations:
+        {{- toYaml .Values.mongodb.tolerations | nindent 8 }}
+      affinity:
+        {{- toYaml .Values.mongodb.affinity | nindent 8 }}
+      volumes:
+      - name: mongodb-init-scripts
+        configMap:
+          name: mongodb-init-script
+  volumeClaimTemplates:
+  - metadata:
+      name: mongodb-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.mongodb.persistence.storageSize }}

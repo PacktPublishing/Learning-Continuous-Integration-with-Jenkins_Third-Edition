@@ -1,0 +1,9 @@
+controller:
+  jenkinsUrl: http://http://20.103.130.176/
+#  loadBalancerIP: <public IP>
+#  serviceType: LoadBalancer
+  JCasC:
+    configScripts:
+      welcome-message: |
+        jenkins:
+          systemMessage: Welcome to our Continuous Integration server.

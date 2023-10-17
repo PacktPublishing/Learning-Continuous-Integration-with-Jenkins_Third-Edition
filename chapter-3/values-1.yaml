@@ -1,0 +1,10 @@
+controller:
+  jenkinsUrl: https://<public IP>/
+  existingSecret: mysecret
+  JCasC:
+    configScripts:
+      authorizationStrategy: |
+        azureAdMatrix:
+          permissions:
+          - "GROUP:Overall/Read:authenticated"
+          - "USER:Overall/Administer:<Group ID>"
