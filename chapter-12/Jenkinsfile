@@ -1,0 +1,17 @@
+@Library('jenkins-email-lib') _
+pipeline {
+    agent any
+    stages {
+        stage('Example Stage') {
+            steps {
+                // This will deliberately fail the stage
+                sh 'exit 1'
+            }
+        }
+    }
+    post {
+        always {
+            notifyByEmail 'recipient@example.com'
+        }
+    }
+}
