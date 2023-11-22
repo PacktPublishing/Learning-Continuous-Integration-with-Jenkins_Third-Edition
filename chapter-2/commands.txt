@@ -1,2 +1,0 @@
-helm install ingress-nginx-jenkins ingress-nginx/ingress-nginx --create-namespace -n jenkins --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz --set controller.replicaCount=1 --set controller.ingressClassResource.name=jenkins-nginx --set controller.ingressClassResource.controllerValue=k8s.io/jenkins-nginx
-kubectl exec --namespace jenkins -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password
