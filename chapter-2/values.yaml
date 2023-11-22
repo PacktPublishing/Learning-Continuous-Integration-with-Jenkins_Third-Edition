@@ -1,7 +1,5 @@
 controller:
-  jenkinsUrl: http://http://20.103.130.176/
-#  loadBalancerIP: <public IP>
-#  serviceType: LoadBalancer
+  jenkinsUrl: http://20.103.130.176/
   JCasC:
     configScripts:
       welcome-message: |
