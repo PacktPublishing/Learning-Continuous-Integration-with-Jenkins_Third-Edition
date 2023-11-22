@@ -1,5 +1,5 @@
 controller:
-  jenkinsUrl: http://20.103.130.176/
+  jenkinsUrl: http://<Jenkins Ingress Public IP>/
   JCasC:
     configScripts:
       welcome-message: |
