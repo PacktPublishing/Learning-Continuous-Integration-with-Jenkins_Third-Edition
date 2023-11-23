@@ -1,16 +1,19 @@
 controller:
-  jenkinsUrl: https://<public IP>/
+  jenkinsUrl: http://<Jenkins Ingress Public IP>/
   existingSecret: mysecret
   JCasC:
     configScripts:
+      welcome-message: |
+        jenkins:
+          systemMessage: Welcome to our Continuous Integration server.
       jenkinsCredentials: |
         credentials:
           system:
             domainCredentials:
             - credentials:
               - usernamePassword:
+                  scope: GLOBAL
                   description: "username and password"
                   id: "username_pass"
                   password: ${password_key}
-                  scope: GLOBAL
                   username: ${username_key}
