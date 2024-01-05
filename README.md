@@ -20,6 +20,17 @@ Before using the code, make sure to refer to the respective chapters in the book
 ### 5. Replace Placeholder Values
 In some code files, you'll find placeholder values denoted by `<...>`. Make sure to replace these with your setup-specific details. For example, replace `<Artifactory Server IP Address>` with your Artifactory server's IP address or URL.
 
+### 6. Deploy in a Sandbox Environment
+Before deploying the "Hello World 3-Tier Application" code, along with other scripts found in this repository, it's crucial to use a **sandbox environment**. A sandbox environment is a safe, isolated setup where you can run and test code without affecting your actual system or data. 
+
+This practice is particularly important for:
+
+- Understanding how the application and scripts behave.
+- Ensuring there are no unforeseen side effects or issues.
+- Protecting your production environment from potential errors during the learning and experimentation phase.
+
+Always review and understand the code and its requirements before deploying it to any environment other than sandbox.
+
 ## Contributing
 If you find any issues or would like to suggest improvements, feel free to open an issue or create a pull request. Your contributions are highly appreciated!
 
