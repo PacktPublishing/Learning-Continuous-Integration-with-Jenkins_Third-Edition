@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#greetings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    width: 90vw;
+    max-width: 1000px;
+}
+
+#greetings p {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* A list of colors for different greetings. This is a simple example, and you can extend or change these as you like. */
+#greetings p:nth-child(1) { background-color: #FFADAD; }
+#greetings p:nth-child(2) { background-color: #FFD6A5; }
+#greetings p:nth-child(3) { background-color: #FDFFB6; }
+#greetings p:nth-child(4) { background-color: #CAFFBF; }
+#greetings p:nth-child(5) { background-color: #9BF6FF; }
+#greetings p:nth-child(6) { background-color: #A0C4FF; }
+#greetings p:nth-child(7) { background-color: #BDB2FF; }
+#greetings p:nth-child(8) { background-color: #FFC6FF; }
+#greetings p:nth-child(9) { background-color: #FFC8A2; }
+#greetings p:nth-child(10) { background-color: #A5FFD6; }
+#greetings p:nth-child(11) { background-color: #FFADFF; }
+#greetings p:nth-child(12) { background-color: #FFB5E8; }
+#greetings p:nth-child(13) { background-color: #FF7171; }
+#greetings p:nth-child(14) { background-color: #FFA0A0; }
+#greetings p:nth-child(15) { background-color: #D6EFFF; }
+#greetings p:nth-child(16) { background-color: #ACF39D; }
+#greetings p:nth-child(17) { background-color: #70F3F8; }
+#greetings p:nth-child(18) { background-color: #FDCB86; }
+#greetings p:nth-child(19) { background-color: #B28DFF; }
+#greetings p:nth-child(20) { background-color: #3BF1FB; }
+

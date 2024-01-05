@@ -1,0 +1,42 @@
+backend:
+  replicaCount: 1
+  image:
+    repository: <Artifactory Server IP Address>/docker-local/backend
+    tag: 1.0.0-1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3000
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+frontend:
+  replicaCount: 1
+  image:
+    repository: <Artifactory Server IP Address>/docker-local/frontend
+    tag: 1.0.0-1
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+mongodb:
+  replicaCount: 1
+  image:
+    repository: mongo
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 27017
+  persistence:
+    enabled: true
+    storageSize: 10Gi
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}

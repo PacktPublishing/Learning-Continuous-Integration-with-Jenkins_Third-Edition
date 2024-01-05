@@ -1,0 +1,12 @@
+controller:
+  jenkinsUrl: http://<Jenkins Ingress Public IP>/
+  JCasC:
+    configScripts:
+      welcome-message: |
+        jenkins:
+          systemMessage: Welcome to our Continuous Integration server.
+      authorizationStrategy: |
+        azureAdMatrix:
+          permissions:
+          - "GROUP:Overall/Read:authenticated"
+          - "USER:Overall/Administer:<Group ID>"

@@ -1,0 +1,4 @@
+name: hello-world
+version: 1.0.0
+description: A Helm chart for a 3-tier web application
+apiVersion: v2
